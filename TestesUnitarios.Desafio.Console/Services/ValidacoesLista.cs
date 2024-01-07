@@ -1,23 +1,20 @@
+using System.Text.RegularExpressions;
+
 namespace TestesUnitarios.Desafio.Console.Services
 {
     public class ValidacoesLista
     {
         public List<int> RemoverNumerosNegativos(List<int> lista)
         {
-            var listaSemNegativos = lista.Where(x => x > 0);
-            return listaSemNegativos.ToList();
+            return lista.Where(x => x >= 0).ToList();
         }
-
         public bool ListaContemDeterminadoNumero(List<int> lista, int numero)
         {
-            var contem = lista.Contains(numero);
-            return contem;
+            return lista.Contains(numero);
         }
-
         public List<int> MultiplicarNumerosLista(List<int> lista, int numero)
         {
-            var listaMultiplicada = lista.Select(x => x * numero).ToList();
-            return listaMultiplicada;
+            return lista.Select(x => x * numero).ToList();
         }
 
         public int RetornarMaiorNumeroLista(List<int> lista)
@@ -28,6 +25,16 @@ namespace TestesUnitarios.Desafio.Console.Services
         public int RetornarMenorNumeroLista(List<int> lista)
         {
             return lista.Min();
+        }
+
+        public List<string> RetornarPalavrasDoTexto(string texto)
+        {
+            return Regex.Split(" |\n", texto).ToList();
+        // IMPLEMENTADO !!
+        }
+        public int RetornarQuantidadeCaracteresDaPalavra(string palavra)
+        {
+            return palavra.Length;
         }
     }
 }
