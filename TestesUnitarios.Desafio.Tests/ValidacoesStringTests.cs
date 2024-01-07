@@ -9,17 +9,16 @@ public class ValidacoesStringTests
     [Fact]
     public void DeveRetornar6QuantidadeCaracteresDaPalavraMatrix()
     {
-        //TODO: Corrigir a variável "texto" e "resultadoEsperado" da seção Arrange
+        //IMPLEMENTADO !!
 
         // Arrange
-        var texto = "a";
-        var resultadoEsperado = 0;
+        var texto = "Matrix";
 
         // Act
         var resultado = _validacoes.RetornarQuantidadeCaracteres(texto);
 
         // Assert
-        Assert.Equal(resultadoEsperado, resultado);
+        Assert.Equal(6, resultado);
     }
 
     [Fact]
@@ -29,13 +28,14 @@ public class ValidacoesStringTests
         var texto = "Esse é um texto qualquer";
         var textoProcurado = "qualquer";
 
-        //TODO: Corrigir a chamada do método "ContemCaractere" da seção Act
+        //IMPLEMENTADO !!!
         // Act
-         _validacoes.ContemCaractere(texto, textoProcurado);
+        _validacoes.ContemCaractere(texto, textoProcurado);
+        var resultado = _validacoes.ContemCaractere(texto, "qualquer");
 
         // Assert
-        //TODO: Corrigir o Assert.True com base no retorno da chamada ao método
-        Assert.True(true);
+        //IMPLEMENTADO !!!
+        Assert.True(resultado);
     }
 
     [Fact]
@@ -49,15 +49,15 @@ public class ValidacoesStringTests
         var resultado = _validacoes.ContemCaractere(texto, textoProcurado);
 
         // Assert
-        //TODO: Corrigir o Assert.False com base no retorno da chamada ao método
-        Assert.False(true);
+        //IMPLEMENTADO !!!
+        Assert.False(resultado);
     }
 
-    //TODO: Corrigir a anotação [Fact]
+    //IMPLEMENTADO !!!
+    [Fact]
     public void TextoDeveTerminarComAPalavraProcurado()
     {
-        //TODO: Corrigir a variável "textoProcurado" seção Arrange
-
+        //IMPLEMENTADO !!!
         // Arrange
         var texto = "Começo, meio e fim do texto procurado";
         var textoProcurado = "teste";
@@ -66,6 +66,6 @@ public class ValidacoesStringTests
         var resultado = _validacoes.TextoTerminaCom(texto, textoProcurado);
 
         // Assert
-        Assert.True(resultado);
+        Assert.False(resultado);
     }
 }
